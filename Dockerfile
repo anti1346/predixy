@@ -23,12 +23,10 @@ RUN mkdir -p /predixy
 # predixy 다운로드 및 설치
 RUN wget -O /tmp/predixy.tar.gz ${PREDIXY_URL} \
     && tar -xzf /tmp/predixy.tar.gz -C /predixy --strip-components=1 \
-    && find /predixy -name "predixy" -type f -exec mv {} /usr/local/bin/predixy \; \
+    && mv /predixy /etc/. \
+    && ln -sf /etc/predixy/bin/predixy /usr/local/bin/predixy \
     && chmod +x /usr/local/bin/predixy \
-    && rm -rf /tmp/* /predixy
-
-# 설정 파일 디렉토리 생성
-RUN mv /predixy /etc/.
+    && rm -rf /tmp/*
 
 # 기본 설정 파일 복사
 RUN mkdir -p /etc/predixy /var/log/predixy
