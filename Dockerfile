@@ -30,6 +30,7 @@ RUN wget -O /tmp/predixy.tar.gz ${PREDIXY_URL} \
 
 # 기본 설정 파일 복사
 RUN cp /etc/predixy/conf/license.conf /etc/predixy/conf/license
+RUN sed -i '$a\' /etc/predixy/conf/license
 RUN mkdir -p /etc/predixy /var/log/predixy
 
 # 로그 디렉토리 권한 설정
