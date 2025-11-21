@@ -43,4 +43,4 @@ EXPOSE 7617 17617
 HEALTHCHECK --interval=10s --timeout=3s CMD predixy -v >/dev/null || exit 1
 
 # predixy 실행
-CMD ["/usr/local/bin/predixy", "/etc/predixy/predixy.conf"]
+CMD ["/usr/local/bin/predixy", "/etc/predixy/conf/predixy.conf"]
