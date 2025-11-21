@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 # 환경 변수 설정
 ENV PREDIXY_VERSION=7.0.1
 ENV PREDIXY_URL=https://github.com/joyieldInc/predixy/releases/download/${PREDIXY_VERSION}/predixyFreeEdition-${PREDIXY_VERSION}-amd64-linux.tar.gz
+# https://github.com/joyieldInc/predixy/releases/download/7.0.1/predixyFreeEdition-7.0.1-amd64-linux.tar.gz
 
 # 타임존 설정 (대화형 프롬프트 방지)
 ENV TZ=Asia/Seoul
