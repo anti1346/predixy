@@ -57,8 +57,8 @@ RUN sed -i "s/Include license.conf/#Include license.conf/" /etc/predixy/conf/pre
 # -------------------------------------------------------------------
 # Optional: Predixy user for non-root execution
 # -------------------------------------------------------------------
-RUN useradd -r -s /bin/false predixy \
-    && chown -R predixy:predixy /etc/predixy /var/log/predixy
+#RUN useradd -r -s /bin/false predixy \
+#    && chown -R predixy:predixy /etc/predixy /var/log/predixy
 
 # -------------------------------------------------------------------
 # Runtime Settings
