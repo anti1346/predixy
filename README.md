@@ -5,10 +5,14 @@
 
 ### docker build
 ```
+docker build --no-cache -t anti1346/predixy-1.0.5:latest .
+```
+```
 docker build --no-cache -t anti1346/predixy-7.0.1:latest .
 ```
 ### docker push
 ```
+docker push anti1346/predixy-1.0.5:latest
 docker push anti1346/predixy-7.0.1:latest
 ```
 ### docker images filter
