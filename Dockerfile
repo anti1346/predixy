@@ -52,7 +52,7 @@ RUN sed -i "s/Include license.conf/#Include license.conf/" /etc/predixy/conf/pre
 #RUN mkdir -p /etc/predixy /var/log/predixy
 
 # 로그 디렉토리 권한 설정
-RUN chmod 755 /var/log/predixy
+#RUN chmod 755 /var/log/predixy
 
 # -------------------------------------------------------------------
 # Optional: Predixy user for non-root execution
