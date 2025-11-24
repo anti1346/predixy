@@ -1,8 +1,6 @@
 # predixy
 <p>Release PredixyFreeEdition 7.0.1</p>
-
-[Title](link)
-[GitHub](https://github.com/joyieldInc/predixy, "google link")
+[GitHub] (https://github.com/joyieldInc/predixy "joyieldInc/predixy")
 
 ```
 docker build --no-cache -t anti1346/predixy-7.0.1:latest .
