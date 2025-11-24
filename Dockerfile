@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN wget https://github.com/joyieldInc/predixy/releases/download/${VERSION}/predixy-${VERSION}-bin-amd64-linux.tar.gz -O /tmp/predixy.tar.gz \
     && tar -xzf /tmp/predixy.tar.gz -C /tmp/ \
     && mv /tmp/predixy-${VERSION} /etc/predixy \
+    && sed -i "s/Include license.conf/#Include license.conf/" /etc/predixy/conf/predixy.conf \
     && ln -sf /etc/predixy/bin/predixy /usr/local/bin/predixy \
     && chmod +x /usr/local/bin/predixy \
     && rm -f /tmp/predixy.tar.gz
