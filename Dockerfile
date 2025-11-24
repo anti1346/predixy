@@ -6,22 +6,16 @@ ENV VERSION=1.0.5
 RUN apt-get update && apt-get install -y \
     wget \
     tar \
-    g++ \
-    make \
-    git \
-    automake \
-    libtool \
     && rm -rf /var/lib/apt/lists/*
 
 # Predixy 소스 코드 컴파일
-RUN git clone https://github.com/joyieldInc/predixy.git \
-    && cd predixy \
-    && git checkout ${VERSION} \
-    && make \
-    && mkdir -p /etc/predixy \
-    && cp -r bin conf /etc/predixy/ \
-    && cd .. \
-    && rm -rf predixy
+#https://github.com/joyieldInc/predixy/releases/download/1.0.5/predixy-1.0.5-bin-amd64-linux.tar.gz
+RUN wget https://github.com/joyieldInc/predixy/releases/download/${VERSION}/predixy-${VERSION}-bin-amd64-linux.tar.gz -O /tmp/predixy.tar.gz \
+    && tar -xzf /tmp/predixy.tar.gz -C /tmp/ \
+    && mv /tmp/predixy-${VERSION} /etc/predixy \
+    && ln -sf /etc/predixy/bin/predixy /usr/local/bin/predixy \
+    && chmod +x /usr/local/bin/predixy \
+    && rm -f /tmp/predixy.tar.gz
 
 WORKDIR /etc/predixy
 
