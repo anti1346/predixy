@@ -46,7 +46,7 @@ RUN wget --no-check-certificate -O /tmp/predixy.tar.gz ${PREDIXY_URL} \
 # -------------------------------------------------------------------
 # 기본 설정 파일 복사
 ADD conf /etc/predixy/conf
-sed -i "s/Include license.conf/#Include license.conf/" /etc/predixy/conf/predixy.conf
+RUN sed -i "s/Include license.conf/#Include license.conf/" /etc/predixy/conf/predixy.conf
 #RUN cp /etc/predixy/conf/license.conf /etc/predixy/conf/license
 #RUN sed -i '$a\' /etc/predixy/conf/license
 #RUN mkdir -p /etc/predixy /var/log/predixy
